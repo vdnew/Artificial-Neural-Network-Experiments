@@ -9,7 +9,7 @@
       "collapsed_sections": [],
       "toc_visible": true,
       "mount_file_id": "1S7U4JgoVDbg78M8U4Yb3nz_PyWRRFBWJ",
-      "authorship_tag": "ABX9TyOeelVYC/VdxPdVAI83F+x7",
+      "authorship_tag": "ABX9TyMJTnzWO1yoa0ilgxa5Iy9F",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -38,29 +38,7 @@
         "id": "iZtfc7wntXSL"
       },
       "source": [
-        "#Abstract\n",
-        "\n",
-        "## First Dataset\n",
-        "MNIST (\"Modified National Institute of Standards and Technology\") is the de facto “hello world” dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms. As new machine learning techniques emerge, MNIST remains a reliable resource for researchers and learners alike.\n",
-        "\n",
-        "In this Kernel, my goal is to correctly identify digits from a dataset of tens of thousands of handwritten images. I ahve curated a kernels which cover the Artificial Neural Networks (ANN).\n",
-        "\n",
-        "## Second Dataset\n",
-        "the WBCD (Wisconsin Breast Cancer Diagnosis) dataset is employed. This dataset is widely utilized for this kind of application because it has a large number of instances (699), is virtually noise-free and has just a few missing values.\n",
-        "\n",
-        "## Third Dataset\n",
-        "Banknotes are one of the most important assets of a country.\n",
-        "Some miscreants introduce fake notes which bear a\n",
-        "resemblance to original note to create discrepancies of the\n",
-        "money in the financial market. It is difficult for humans to tell true and fake banknotes apart especially because they have a lot of similar features.\n",
-        "\n",
-        "## Forth Dataset\n",
-        "\n",
-        "Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes.\n",
-        "\n",
-        "<br>\n",
-        "\n",
-        "**NOTE: Model Construction details and Algorithm details, training details, evaluation details only mentioned in First Dataset experiment and implementation**"
+        "# Abstract"
       ]
     },
     {
@@ -69,7 +47,34 @@
         "id": "VJJeQKyIArEo"
       },
       "source": [
-        "# Iris Dataset"
+        "# Iris Dataset\n",
+        "\n",
+        "## Iris Classification\n",
+        "The Iris dataset was used in R.A. Fisher's classic 1936 paper, The Use of Multiple Measurements in Taxonomic Problems, and can also be found on the UCI Machine Learning Repository.\n",
+        "\n",
+        "It includes three iris species with 50 samples each as well as some properties about each flower. One flower species is linearly separable from the other two, but the other two are not linearly separable from each other.\n",
+        "\n",
+        "\n",
+        "## Second Dataset\n",
+        "\n",
+        "the WBCD (Wisconsin Breast Cancer Diagnosis) dataset is employed. This dataset is widely\n",
+        "utilized for this kind of application because it has a large number of instances (699), is virtually\n",
+        "noise-free and has just a few missing values.\n",
+        "\n",
+        "\n",
+        "## Third Dataset\n",
+        "\n",
+        "Banknotes are one of the most important assets of a country. Some miscreants introduce fake\n",
+        "notes which bear a resemblance to original note to create discrepancies of the money in the\n",
+        "¦nancial market. It is di¨cult for humans to tell true and fake banknotes apart especially\n",
+        "because they have a lot of similar features.\n",
+        "\n",
+        "\n",
+        "## Forth Dataset\n",
+        "\n",
+        "Fashion-MNIST is a dataset of Zalando's article images—consisting of a training set of 60,000\n",
+        "examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image,\n",
+        "associated with a label from 10 classes."
       ]
     },
     {
@@ -228,12 +233,11 @@
         "f(x)=0.5 if x=0\n",
         "f(x)=1 if x>0\n",
         "\n",
-        "Of course, you can already imagine that the output is not going to be a smooth line: it will be a discontinuous function. Because this can cause problems in the mathematical processing, a continuous variant, the sigmoid function, is often used. An example of a sigmoid function that you might already know is the logistic function. Using this function results in a much smoother result!\n",
-        "As a result, you have the output node, which is associated with the function (such as the sigmoid function) of the weighted sum of the input nodes. Note that the sigmoid function is a mathematical function that results in an “S” shaped curve; You’ll read more about this later.\n",
-        "Lastly, the perceptron may be an additional parameter, called a bias, which you can consider as the weight associated with an additional input node that is permanently set to 1. The bias value is critical because it allows you to shift the activation function to the left or right, which can make a determine the success of your learning.\n",
+        "The sigmoid function, is often used. An example of a sigmoid function. Using this function results in a much smoother result!\n",
+        "As a result, you have the output node, which is associated with the function (such as the sigmoid function) of the weighted sum of the input nodes. Note that the sigmoid function is a mathematical function that results in an “S” shaped curve; the perceptron may be an additional parameter, called a bias, which you can consider as the weight associated with an additional input node that is permanently set to 1. The bias value is critical because it allows you to shift the activation function to the left or right, which can make a determine the success of your learning.\n",
         "\n",
         "## Multi-Layer Perceptrons\n",
-        "Networks of perceptrons are multi-layer perceptrons, and this is what this tutorial will implement in Python with the help of Keras! Multi-layer perceptrons are also known as “feed-forward neural networks”. As you sort of guessed by now, these are more complex networks than the perceptron, as they consist of multiple neurons that are organized in layers. The number of layers is usually limited to two or three, but theoretically, there is no limit!\n",
+        "Networks of perceptrons are multi-layer perceptrons, Multi-layer perceptrons are also known as “feed-forward neural networks”. They consist of multiple neurons that are organized in layers. The number of layers is usually limited to two or three, but theoretically, there is no limit!\n",
         "\n",
         "The layers act very much like the biological neurons that you have read about above: the outputs of one layer serve as the inputs for the next layer.\n",
         "\n",
@@ -278,7 +282,7 @@
         "\n",
         "In compiling, you configure the model with the adam optimizer and the binary_crossentropy loss function. Additionally, you can also monitor the accuracy during the training by passing ['accuracy'] to the metrics argument.\n",
         "\n",
-        "The optimizer and the loss are two arguments that are required if you want to compile the model.you’ll need to tune certain parameters, such as learning rate or momentum. The choice for a loss function depends on the task that you have at hand: for example, you need to used binary_crossentropy for the binary classification. Lastly, with multi-class classification, you’ll make use of categorical_crossentropy.\n",
+        "The optimizer and the loss are two arguments that are required if you want to compile the model. you’ll need to tune certain parameters, such as learning rate or momentum. The choice for a loss function depends on the task that you have at hand: for example, you need to used binary_crossentropy for the binary classification. Lastly, with multi-class classification, you’ll make use of categorical_crossentropy.\n",
         "\n",
         "After, you can train the model for 50 epochs or iterations over all the samples in X_train and y_train, in batches of 1 sample. You can also specify the verbose argument. By setting it to 1, you indicate that you want to see progress bar logging.\n",
         "\n",
@@ -465,8 +469,7 @@
       },
       "source": [
         "model_mnist = Sequential()\n",
-        "model_mnist.add(Dense(input_dim = X_train.shape[1], units = 512, kernel_initializer='uniform', activation='relu'))\n",
-        "model_mnist.add(Dense(units = 256, kernel_initializer='uniform', activation='relu'))\n",
+        "model_mnist.add(Dense(input_dim = X_train.shape[1], units = 256, kernel_initializer='uniform', activation='relu'))\n",
         "model_mnist.add(Dense(units = 128, kernel_initializer='uniform', activation='relu'))\n",
         "model_mnist.add(Dense(units = 10, kernel_initializer='uniform', activation='softmax'))"
       ],
